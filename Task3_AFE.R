@@ -37,6 +37,7 @@ library("caret") #For the models (Random Forest)
 library("party") #For ctree function (Decision Tree)
 library("Hmisc") #To reorder the correlation matrix (Pairwise)
 library("plotly") #Nice Violin Plots!
+library("readxl")
 
 
 ####------ Load the data and take a look -------
@@ -380,7 +381,9 @@ library("plotly") #Nice Violin Plots!
      
 ##### ------ FINAL VISUALIZATION TOUCH -------
      
-  #Observed&Predicted Volume of Sales per Product Type 
+    new_and_existing_final<-read_excel("new_and_existing_final.xlsx")
+     
+     #Observed&Predicted Volume of Sales per Product Type 
     ggplot(new_and_existing_final,aes(x=ProductType,y=Volume, color = NewProduct)) + 
        geom_point(size=5)+ geom_jitter(size = 3, position = position_jitter(width = 0.1, height = 0.1)) + 
        labs(title = "Volume of Sales per category", x = "Product Type", y= "Volume Of Sales") +  theme(plot.title = element_text(hjust = 0.5))+ ggpubr::rotate_x_text()+
