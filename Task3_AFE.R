@@ -391,7 +391,6 @@ library("plotly") #Nice Violin Plots!
      geom_bar(stat = "identity", fill="steelblue")+
      theme(plot.title = element_text(hjust = 0.5))+ ggpubr::rotate_x_text()+
      labs(title = "Predicted Volume of Sales per Product Type", y="Predicted Volume of Sales")
-  
   #Predicted&Exising Volume of Sales as a function of their most important predictors     
      
      ggplot(new_and_existing_final,aes(x=x4StarReviews,y=Volume, color = NewProduct)) + 
