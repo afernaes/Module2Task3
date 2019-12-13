@@ -41,6 +41,13 @@ library("readxl")
 
 
 ####------ Load the data and take a look -------
+
+library("rstudioapi")
+current_path = getActiveDocumentContext()$path
+setwd(dirname(current_path))
+
+
+
   ExistingProductsData <- read.csv(file = "existingproductattributes2017.csv", header = TRUE)
   colnames(ExistingProductsData)[11] <- "RecommendProduct" #To change name for a single column (I did not like the spelling)
   attach(ExistingProductsData)
